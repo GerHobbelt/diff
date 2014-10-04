@@ -1,11 +1,13 @@
 {
   "name": "deep-diff",
-  "main": "index.js",
   "version": "0.2.1",
+  "repo": "flitbit/diff",
+  "author": {
+    "name": "Phillip Clark",
+    "email": "phillip@flitbit.com",
+    "url": "http://github.com/flitbit"
+  },
   "homepage": "https://github.com/flitbit/diff",
-  "authors": [
-    "Phillip Clark <phillip@flitbit.com>"
-  ],
   "description": "Javascript utility for calculating deep difference, capturing changes, and applying changes across objects; for nodejs and the browser.",
   "keywords": [
     "diff",
@@ -14,12 +16,9 @@
     "change-tracking"
   ],
   "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "app/bower_components",
-    "test",
-    "tests"
-  ]
+  "scripts": [
+    "index.js"
+  ],
+  "dependencies": {
+  }  
 }
