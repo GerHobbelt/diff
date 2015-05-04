@@ -138,14 +138,20 @@
   function deepDiff(lhs, rhs, changes, prefilter, path, key, stack) {
     path = path || [];
     var currentPath = path.slice(0);
+    var ltype = typeof lhs;
+    var rtype = typeof rhs;
+    if (ltype === kendo.data.ObservableArray || ltype === kendo.data.ObservableObject) {
+      lhs = lhs.toJSON();
+    }
+    if (rtype === kendo.data.ObservableArray || rtype === kendo.data.ObservableObject) {
+      rhs = rhs.toJSON();
+    }
     if (typeof key !== 'undefined') {
       if (prefilter && prefilter(currentPath, key, { lhs: lhs, rhs: rhs })) {
         return;
       }
       currentPath.push(key);
     }
-    var ltype = typeof lhs;
-    var rtype = typeof rhs;
     if (ltype === 'undefined') {
       if (rtype !== 'undefined') {
         changes(new DiffNew(currentPath, rhs));
