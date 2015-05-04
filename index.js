@@ -140,10 +140,10 @@
     var currentPath = path.slice(0);
     var ltype = typeof lhs;
     var rtype = typeof rhs;
-    if (ltype === kendo.data.ObservableArray || ltype === kendo.data.ObservableObject) {
+    if (lhs instanceof kendo.data.ObservableArray || lhs instanceof kendo.data.ObservableObject) {
       lhs = lhs.toJSON();
     }
-    if (rtype === kendo.data.ObservableArray || rtype === kendo.data.ObservableObject) {
+    if (rhs instanceof kendo.data.ObservableArray || rhs instanceof kendo.data.ObservableObject) {
       rhs = rhs.toJSON();
     }
     if (typeof key !== 'undefined') {
